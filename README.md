@@ -77,6 +77,10 @@ No script execution policies or PowerShell required. If Windows SmartScreen appe
 - **Use BloodVeil.exe** — avoids PowerShell entirely. Just double-click.
 - If you use the .ps1 script: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`
 
+### Slayer Mastery screen blank or missing icons
+- The launcher auto-updates cache when a new version is released. **Run the launcher again** so it downloads the latest client and cache (v1.3.1) with Slayer Mastery sprites.
+- If it still doesn’t update: delete the folder `%USERPROFILE%\.bloodveil_live\cache`, then run the launcher once to re-download the full cache.
+
 ### Can't Connect to Server
 - Check firewall settings
 - Verify server is online: `66.179.191.115:52778`
