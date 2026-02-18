@@ -4,3 +4,6 @@ java_runtime.zip
 Bloodveil.jar
 cache_temp.zip
 *.zip
+
+# Local-only instructions (do not publish)
+PUSH_TO_GITHUB.txt
