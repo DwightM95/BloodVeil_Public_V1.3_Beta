@@ -2,11 +2,11 @@
 # Bootstrap launcher - downloads client and cache from GitHub releases
 
 # Configuration — for new releases: update version and tag to match GitHub release
-$RELEASE_TAG = "v1.3.0"
+$RELEASE_TAG = "v1.3.1"
 $GITHUB_RELEASE = "https://github.com/DwightM95/BloodVeil_Public_V1.3_Beta/releases/download/$RELEASE_TAG"
 $CLIENT_JAR = "Bloodveil.jar"
 $CACHE_ARCHIVE = "cache.zip"
-$CLIENT_VERSION = "1.3.0"
+$CLIENT_VERSION = "1.3.1"
 $SERVER_IP = "66.179.191.115:52778"
 
 # Java download configuration (Windows x64)
@@ -141,9 +141,21 @@ if (-not (Test-Path $CLIENT_JAR)) {
     Write-Host "[OK] Client found" -ForegroundColor Green
 }
 
-# Check/Download Cache
+# Check/Download Cache (auto-update: required version from release version.txt)
 $cacheDir = "$env:USERPROFILE\.bloodveil_live\cache"
 $versionFile = "$cacheDir\version.txt"
+
+# Fetch required cache version from release so cache.zip can auto-update without new launcher
+$requiredCacheVersion = $CLIENT_VERSION
+try {
+    $versionUrl = "$GITHUB_RELEASE/version.txt"
+    $wc = New-Object System.Net.WebClient
+    $wc.Headers.Add("User-Agent", "BloodVeil-Launcher")
+    $requiredCacheVersion = ($wc.DownloadString($versionUrl)).Trim()
+    $wc.Dispose()
+} catch {
+    # Fallback to launcher's built-in version
+}
 
 Write-Host "[*] Checking cache installation..." -ForegroundColor Cyan
 
@@ -156,9 +168,9 @@ if (-not (Test-Path $cacheDir)) {
     Write-Host "[!] Cache version file missing" -ForegroundColor Yellow
 } else {
     $localVersion = Get-Content $versionFile -ErrorAction SilentlyContinue
-    if ($localVersion -ne $CLIENT_VERSION) {
+    if ($localVersion -ne $requiredCacheVersion) {
         $needsCache = $true
-        Write-Host "[!] Cache outdated (Local: $localVersion, Required: $CLIENT_VERSION)" -ForegroundColor Yellow
+        Write-Host "[!] Cache outdated (Local: $localVersion, Required: $requiredCacheVersion)" -ForegroundColor Yellow
     }
 }
 
@@ -184,8 +196,8 @@ if ($needsCache) {
     # Extract cache
     Expand-Archive -Path $tempCache -DestinationPath $cacheDir -Force
     
-    # Write version file
-    Set-Content -Path $versionFile -Value $CLIENT_VERSION
+    # Write version file (use required version so future launcher runs see up-to-date)
+    Set-Content -Path $versionFile -Value $requiredCacheVersion
     
     # Cleanup temp file
     Remove-Item $tempCache -ErrorAction SilentlyContinue

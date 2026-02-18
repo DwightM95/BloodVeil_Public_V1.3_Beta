@@ -45,7 +45,7 @@ No script execution policies or PowerShell required. If Windows SmartScreen appe
 **Port:** 52778  
 **Status:** Online 24/7
 
-## 📋 Current Release: v1.3.0
+## 📋 Current Release: v1.3.1
 
 | File | Size | Purpose |
 |------|------|---------|
@@ -125,7 +125,7 @@ Custom BloodVeil modifications © 2026
 ---
 
 **Server Status:** 🟢 Online  
-**Version:** v1.3.0 Beta  
+**Version:** v1.3.1 Beta  
 **Last Updated:** February 18, 2026
 
 **Enjoy BloodVeil!** 🎉
