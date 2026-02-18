@@ -2,6 +2,21 @@
 
 Welcome to BloodVeil! This guide will help you get started.
 
+## 🚀 Quick Start (RECOMMENDED)
+
+**Use the automatic launcher** - it handles everything for you:
+
+1. **Download**: Get `BloodVeil-Launcher.ps1` from [Releases](https://github.com/DwightM95/BloodVeil_Public_V1.3_Beta/releases/latest)
+2. **Right-click** the file and select **"Run with PowerShell"**
+3. **Done!** The launcher automatically downloads Java, the client, and cache files
+
+> **Note:** If Windows blocks the script, run this command first:
+> ```powershell
+> Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+> ```
+
+---
+
 ## ⚠️ IMPORTANT: Plugin Hub Warning
 
 **DO NOT install the "117 HD" plugin** or other external rendering plugins from the RuneLite Plugin Hub. These plugins are designed for the official OSRS client and **WILL CRASH** BloodVeil.
@@ -10,9 +25,23 @@ If you're experiencing crashes, see [KNOWN_ISSUES.md](KNOWN_ISSUES.md) for solut
 
 ---
 
-## 📥 Installation
+## 📥 Installation Methods
 
-### Option 1: Automatic Launcher (Easiest)
+### ✅ Option 1: Automatic Launcher (EASIEST - Use This!)
+
+The launcher handles everything automatically:
+- Downloads Java if you don't have it
+- Downloads the BloodVeil client
+- Downloads cache files (~333 MB)
+- Launches the game
+
+**Steps:**
+1. Download `BloodVeil-Launcher.ps1` from [Releases](https://github.com/DwightM95/BloodVeil_Public_V1.3_Beta/releases/latest)
+2. Right-click → "Run with PowerShell"
+3. Wait for downloads to complete
+4. Game launches automatically!
+
+### Option 2: Manual Installation (Advanced Users)
 
 1. **Download the launcher**
    - Go to [Releases](https://github.com/DwightM95/BloodVeil_Public_V1.3_Beta/releases/latest)
