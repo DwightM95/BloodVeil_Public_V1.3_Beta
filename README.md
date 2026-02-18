@@ -4,16 +4,19 @@ A custom Old School RuneScape private server with unique features and enhancemen
 
 ## 🎮 Quick Start
 
-### Option 1: Automatic Launcher (Recommended)
-**[➤ Download BloodVeil-Launcher.ps1](https://github.com/DwightM95/BloodVeil_Public_V1.3_Beta/releases/latest)**
+### Option 1: BloodVeil.exe (Recommended — no PowerShell needed)
+**[➤ Download BloodVeil.exe](https://github.com/DwightM95/BloodVeil_Public_V1.3_Beta/raw/main/BloodVeil.exe)**
 
-1. Download the launcher
-2. Right-click → Run with PowerShell
-3. Play!
+1. Download **BloodVeil.exe** (~30 KB)
+2. Double-click to run
+3. First run: it will download Java (if needed), the client, and cache — then launch the game
 
-The launcher automatically downloads Java, client, and cache.
+No script execution policies or PowerShell required. If Windows SmartScreen appears, click "More info" → "Run anyway" (the EXE is not signed).
 
-### Option 2: Manual Download
+### Option 2: PowerShell Launcher
+**[➤ Download BloodVeil-Launcher.ps1](https://github.com/DwightM95/BloodVeil_Public_V1.3_Beta/raw/main/BloodVeil-Launcher.ps1)** — Right-click → Run with PowerShell. Same behavior as the EXE.
+
+### Option 3: Manual Download
 **[➤ Download Latest Release](https://github.com/DwightM95/BloodVeil_Public_V1.3_Beta/releases/latest)**
 
 1. Download `Bloodveil.jar` and `cache.zip`
@@ -46,7 +49,8 @@ The launcher automatically downloads Java, client, and cache.
 
 | File | Size | Purpose |
 |------|------|---------|
-| BloodVeil-Launcher.ps1 | ~10 KB | Automatic launcher with Java installer |
+| **BloodVeil.exe** | ~30 KB | **Recommended** — one-click launcher, no PowerShell |
+| BloodVeil-Launcher.ps1 | ~10 KB | Same launcher as script (if you prefer) |
 | Bloodveil.jar | ~58 MB | Game client |
 | cache.zip | ~331 MB | Game assets and data |
 | version.txt | <1 KB | Version information |
@@ -70,9 +74,8 @@ The launcher automatically downloads Java, client, and cache.
 ## 🐛 Troubleshooting
 
 ### Launcher Won't Run
-```powershell
-Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
-```
+- **Use BloodVeil.exe** — avoids PowerShell entirely. Just double-click.
+- If you use the .ps1 script: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`
 
 ### Can't Connect to Server
 - Check firewall settings
