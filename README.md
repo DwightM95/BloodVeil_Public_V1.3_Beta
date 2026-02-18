@@ -17,7 +17,7 @@ The launcher automatically downloads Java, client, and cache.
 **[➤ Download Latest Release](https://github.com/DwightM95/BloodVeil_Public_V1.3_Beta/releases/latest)**
 
 1. Download `Bloodveil.jar` and `cache.zip`
-2. Extract `cache.zip` to `%USERPROFILE%\.bloodveil\cache\`
+2. Extract `cache.zip` to `%USERPROFILE%\.bloodveil_live\cache\`
 3. Run: `java -jar Bloodveil.jar`
 
 ## 📦 What's New in v1.3
@@ -81,7 +81,7 @@ Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 
 ### Cache Download Issues
 - Re-run the launcher
-- Or manually download `cache.zip` and extract to `%USERPROFILE%\.bloodveil\cache\`
+- Or manually download `cache.zip` and extract to `%USERPROFILE%\.bloodveil_live\cache\`
 
 ### Java Issues
 - The launcher auto-installs Java 11
@@ -94,10 +94,9 @@ Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 
 ## 📁 File Locations
 
-- **Client JAR:** `%USERPROFILE%\.bloodveil\Bloodveil.jar`
-- **Cache:** `%USERPROFILE%\.bloodveil\cache\`
-- **Settings:** `%USERPROFILE%\.bloodveil\settings\`
-- **Logs:** `%USERPROFILE%\.bloodveil\logs\`
+- **Client JAR:** in the folder where you run the launcher, or `%USERPROFILE%\.bloodveil_live\`
+- **Cache:** `%USERPROFILE%\.bloodveil_live\cache\`
+- **Settings / Logs:** under the same folder as the client
 
 ## 🔄 Updates
 

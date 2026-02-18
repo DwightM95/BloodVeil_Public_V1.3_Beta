@@ -172,7 +172,7 @@ if ($needsCache) {
         Write-Host "URL: $cacheUrl" -ForegroundColor Gray
         Read-Host "Press Enter to exit"
         exit 1
-    }$javaExe
+    }
     
     Write-Host "[*] Extracting cache files..." -ForegroundColor Cyan
     
