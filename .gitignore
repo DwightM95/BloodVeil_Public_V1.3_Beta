@@ -1,0 +1,6 @@
+# Launcher may create these when run locally
+java/
+java_runtime.zip
+Bloodveil.jar
+cache_temp.zip
+*.zip
